@@ -1,1 +1,2 @@
-import './js/first.js';
+import './js/items.js';
+import './js/search-form-view.js';
