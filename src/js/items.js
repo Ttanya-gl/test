@@ -1,7 +1,15 @@
 /* Коллекция товаров */
+import Backbone from 'backbone';
+
 var Items = Backbone.Collection.extend({
 
-  model: Item,
-  urlRoot: '/api/v3/client',
-
+  url: function() {
+    return 'https://www.sima-land.ru/api/v3/item/' + '?sid=' + this.sids
+  },
+  searchitems: function (sid) {
+    this.sids = sid
+    this.fetch()
+  }
 });
+
+export default Items
