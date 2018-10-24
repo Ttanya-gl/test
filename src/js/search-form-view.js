@@ -19,10 +19,6 @@ var SearchFormView = Backbone.View.extend({
     var test = new Items();
     test.searchitems(123456)
   },
-  
-  render: function() {
-    //
-  }
 
 });
 
