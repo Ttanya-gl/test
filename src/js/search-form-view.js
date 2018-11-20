@@ -16,7 +16,7 @@ var SearchFormView = Backbone.View.extend({
     console.log(this)
     this.collection = new Items();
     this.listenTo(this.collection, 'sync', this.render)
-    this.template = _.template($('#template').html() || '');
+    this.template = _.template($('#result-template').html() || '');
     window.$ = $;
     window._ = _;
   },
@@ -27,7 +27,10 @@ var SearchFormView = Backbone.View.extend({
   
   render: function(collection) {
     console.log(collection.toJSON())
-    $('body').html(this.template())
+    $('.js-search').html(this.template(this.collection.toJSON({
+      items: this.items
+    })));
+    return this.items;
   },
 
 });

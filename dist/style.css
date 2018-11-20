@@ -14,6 +14,9 @@ section {
   border-radius: 10px;
   padding: 20px; }
 
+.item {
+  background: #fff; }
+
 textarea {
   background: #fff;
   border: 1px solid #ccc;
@@ -21,12 +24,14 @@ textarea {
   min-height: 80px;
   width: 100%; }
 
-button {
+button,
+.button {
   background: blue;
   border: none;
   border-radius: 15px;
   color: #fff;
   cursor: pointer;
+  display: inline-block;
   font-weight: bold;
   padding: 5px 15px; }
 

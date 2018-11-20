@@ -9,17 +9,25 @@
 <body>
 	<section>
 		<h2>Поиск товаров по артикулам</h2>
-		<p>Введите артикулы через пробел или с новой строки, например, 123456 123345 1233456</p>
-		<form class="search-form">
-			<textarea></textarea>
-			<p>Не более 1000 артикулов за раз</p>
-			<p><div class="search-button">Искать</div></p>
-		</form>
+		<div class="js-search">
+			<p>Введите артикулы через пробел или с новой строки, например, 123456 123345 1233456</p>
+			<form class="search-form">
+				<textarea></textarea>
+				<p>Не более 1000 артикулов за раз</p>
+				<div class="button search-button">Искать</div>
+			</form>
+		</div>
 	</section>
-	<script type="template" id="template">
-		Привет
+	<script type="template" id="result-template">
+			<div class="item-wrapper">
+				<p>Результат</p>
+					<div class="item">
+						<p>Артикул: <% sid %></p>
+					</div>
+				<button class="button">Искать ещё</button>
+			</div>
 	</script>
-	<script type="text/javascript" src="dist/bundle.js"></script>
+	<script type="text/javascript" src="dist/js/app.js"></script>
 </body>
 </html>
 
