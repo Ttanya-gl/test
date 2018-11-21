@@ -22,15 +22,15 @@ var SearchFormView = Backbone.View.extend({
   },
   
   search: function(e) {
-    this.collection.searchitems(123456)
+    this.collection.searchitems('123456,721877')
   },
   
   render: function(collection) {
     console.log(collection.toJSON())
-    $('.js-search').html(this.template(this.collection.toJSON({
-      items: this.items
-    })));
-    return this.items;
+    $('.js-search').html(this.template({
+      sid: 123
+    }));
+    return this;
   },
 
 });

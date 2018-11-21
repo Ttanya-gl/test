@@ -9,7 +9,10 @@ var Items = Backbone.Collection.extend({
   searchitems: function (sid) {
     this.sids = sid
     this.fetch()
-  }
+  },
+  parse: function (response) {
+    return response.items;
+  },
 });
 
 export default Items
