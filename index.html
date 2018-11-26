@@ -21,9 +21,11 @@
 	<script type="template" id="result-template">
 			<div class="item-wrapper">
 				<p>Результат</p>
+				<% _.each(items, function(item) { %>
 					<div class="item">
-						<p>Артикул: <%= sid %></p>
+						<p>Артикул: <%= item.sid %></p>
 					</div>
+				<% }); %>
 				<button class="button">Искать ещё</button>
 			</div>
 	</script>

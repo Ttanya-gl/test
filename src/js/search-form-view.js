@@ -28,7 +28,7 @@ var SearchFormView = Backbone.View.extend({
   render: function(collection) {
     console.log(collection.toJSON())
     $('.js-search').html(this.template({
-      sid: 123
+      items: this.items
     }));
     return this;
   },
