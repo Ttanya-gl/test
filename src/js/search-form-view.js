@@ -2,7 +2,7 @@
 import Backbone from 'backbone';
 import Items from './items';
 import $ from 'jquery';
-import _ from 'lodash';
+import template from  'lodash/template'
 
 var SearchFormView = Backbone.View.extend({
 
@@ -16,9 +16,7 @@ var SearchFormView = Backbone.View.extend({
     console.log(this)
     this.collection = new Items();
     this.listenTo(this.collection, 'sync', this.render)
-    this.template = _.template($('#result-template').html() || '');
-    window.$ = $;
-    window._ = _;
+    this.template = template($('#result-template').html() || '');
   },
   
   search: function(e) {
@@ -27,8 +25,8 @@ var SearchFormView = Backbone.View.extend({
   
   render: function(collection) {
     console.log(collection.toJSON())
-    $('.js-search').html(this.template({
-      items: this.items
+    this.$('.js-search').html(this.template({
+      items: collection.toJSON()
     }));
     return this;
   },

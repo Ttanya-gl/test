@@ -21,7 +21,7 @@
 	<script type="template" id="result-template">
 			<div class="item-wrapper">
 				<p>Результат</p>
-				<% _.each(items, function(item) { %>
+				<% items.forEach(function(item) { %>
 					<div class="item">
 						<p>Артикул: <%= item.sid %></p>
 					</div>
