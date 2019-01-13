@@ -16,6 +16,24 @@ section {
   padding: 20px;
 }
 
-.item {
-  background: #fff;
+.items {
+  margin: 0 0 15px;
 }
+
+.item {
+  border: 1px solid #eee;
+  margin: 0 0 -1px;
+  padding: 10px;
+  &:first-child {
+    border-radius: 3px 3px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 3px 3px;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
