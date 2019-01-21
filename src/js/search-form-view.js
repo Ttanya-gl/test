@@ -21,21 +21,21 @@ var SearchFormView = Backbone.View.extend({
   },
   
   search: function(e) {
-    var sids = this.$('textarea').val();
-    this.collection.searchitems(sids);
+    var sidsString = this.$('textarea').val();
+    var sids = sidsString.match(/(\d+)/g);
+    this.collection.searchitems(sids.join(','));
   },
   
   render: function(collection) {
-    $('.js-search').html(this.template({
+    this.$('.js-search').html(this.template({
       items: collection.toJSON()
     }));
     return this;
   },
 
   searchTemplate: function() {
-    $('.js-search').html(this.templateForm());
+    this.$('.js-search').html(this.templateForm());
   },
-
 });
 
 export default SearchFormView
