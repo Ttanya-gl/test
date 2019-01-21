@@ -20,12 +20,14 @@ var SearchFormView = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render)
   },
   
+  /* Поиск товаров по артикулам */
   search: function(e) {
     var sidsString = this.$('textarea').val();
     var sids = sidsString.match(/(\d+)/g);
     this.collection.searchitems(sids.join(','));
   },
   
+  /* Рендеринг списка найденных товаров товаров */
   render: function(collection) {
     this.$('.js-search').html(this.template({
       items: collection.toJSON()
@@ -33,6 +35,7 @@ var SearchFormView = Backbone.View.extend({
     return this;
   },
 
+  /* Показ формы поиска по артикулам */
   searchTemplate: function() {
     this.$('.js-search').html(this.templateForm());
   },
