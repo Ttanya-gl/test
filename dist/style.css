@@ -14,6 +14,21 @@ section {
   border-radius: 10px;
   padding: 20px; }
 
+.items {
+  margin: 0 0 15px; }
+
+.item {
+  border: 1px solid #eee;
+  margin: 0 0 -1px;
+  padding: 10px; }
+  .item:first-child {
+    border-radius: 3px 3px 0 0; }
+  .item:last-child {
+    border-radius: 0 0 3px 3px; }
+  .item p {
+    margin: 0;
+    padding: 0; }
+
 textarea {
   background: #fff;
   border: 1px solid #ccc;
@@ -21,12 +36,15 @@ textarea {
   min-height: 80px;
   width: 100%; }
 
-button {
+button,
+.button {
   background: blue;
   border: none;
   border-radius: 15px;
   color: #fff;
   cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
   font-weight: bold;
   padding: 5px 15px; }
 

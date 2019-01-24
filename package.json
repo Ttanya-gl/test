@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack --watch"
+    "start": "webpack --watch --mode development"
   },
   "author": "Tanya",
   "license": "ISC",

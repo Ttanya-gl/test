@@ -1,1 +1,6 @@
-import './js/first.js';
+import './js/items.js';
+import SearchFormView from './js/search-form-view.js';
+
+var view = new SearchFormView({
+  el: '.js-search-items',
+});
