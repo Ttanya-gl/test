@@ -1,4 +1,4 @@
-import { SearchFormView } from './../search-form-view';
+import SearchFormView from './../search-form-view';
 
 /*
  * Тест SearchFormView
