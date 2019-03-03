@@ -25,6 +25,7 @@ var SearchFormView = Backbone.View.extend({
     var sidsString = this.$('textarea').val();
     var sids = sidsString.match(/(\d+)/g);
     this.collection.searchitems(sids.join(','));
+    this.render();
   },
   
   /* Рендеринг списка найденных товаров товаров */
