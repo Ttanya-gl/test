@@ -14,10 +14,11 @@ describe('items', function () {
     afterEach(function () {
         collection.remove()
     });
-        
+    
     it('checks url', function(){
+        collection.sids = 123456;
         expect(collection).toBeDefined();
-        expect(collection.url).toEqual('/api/v3/item-search');
+        expect(collection.url()).toEqual(`https://www.sima-land.ru/api/v3/item/?sid=${collection.sids}`);
     });
     it('searchitems()', function(){
 

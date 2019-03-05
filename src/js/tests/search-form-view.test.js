@@ -12,9 +12,13 @@ describe('SearchFormView', function () {
     afterEach(() => {
         view.remove();
     });
+    beforeEach(() => {
+        $('document.body').append('<d')
+    });
     it('search() calls when click', function(){
         spyOn(SearchFormView.prototype, 'search');
         view = createView();
+        console.log($('.search-button').length)
         view.$('.search-button').click();
         expect(view.search).toHaveBeenCalledTimes(1);
     });
