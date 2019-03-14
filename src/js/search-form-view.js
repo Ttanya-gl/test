@@ -24,13 +24,16 @@ var SearchFormView = Backbone.View.extend({
   search: function(e) {
     var sidsString = this.$('textarea').val();
     var sids = sidsString.match(/(\d+)/g);
-    this.collection.searchitems(sids.join(','));
+    if (sids) {
+      this.collection.searchitems(sids.join(','));
+      this.render();
+    } 
   },
   
   /* Рендеринг списка найденных товаров товаров */
-  render: function(collection) {
+  render: function() {
     this.$('.js-search').html(this.template({
-      items: collection.toJSON()
+      items: this.collection.toJSON()
     }));
     return this;
   },
