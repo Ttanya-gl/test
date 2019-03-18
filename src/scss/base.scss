@@ -13,7 +13,8 @@ body {
 section {
   background: #fff;
   border-radius: 10px;
-  max-width: 500px;
+  margin-bottom: 20px;
+  max-width: 800px;
   padding: 20px;
 }
 
@@ -37,4 +38,47 @@ section {
   }
 }
 
+.flex-row {
+  display: flex;
+}
 
+.item-block {
+  .item-image {
+    border-radius: 5px;
+    flex-shrink: 0;
+    height: auto;
+    max-width: 200px;
+    margin-right: 10px;
+    width: 35%;
+  }
+  .item-description {
+    flex-grow: 1;
+    width: 100%;
+  }
+  .price-block {
+    background: #f3faf9;
+    display: block;
+    font-size: 20px;
+    padding: 15px 10px;
+  }
+}
+
+.tabs {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 15px;
+    text-transform: uppercase;
+    .link {
+      color: #1f84db;
+      cursor: pointer;
+      border-bottom: 1px dashed;
+      &:hover  {
+        border-color: transparent;
+      }
+    }
+  }
+}
