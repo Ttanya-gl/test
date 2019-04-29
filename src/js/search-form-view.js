@@ -1,6 +1,8 @@
 /* View для формы поиска */
 import Backbone from 'backbone';
 import Items from './items';
+import Item from './item';
+import ItemView from './item-view';
 import $ from 'jquery';
 import template from  'lodash/template'
 
@@ -11,6 +13,7 @@ var SearchFormView = Backbone.View.extend({
   events: {
     'click .search-button': 'search',
     'click .js-button-more': 'searchTemplate',
+    'click .js-more-link': 'initItemView',
   },
   
   initialize: function(){
@@ -41,6 +44,13 @@ var SearchFormView = Backbone.View.extend({
   /* Показ формы поиска по артикулам */
   searchTemplate: function() {
     this.$('.js-search').html(this.templateForm());
+  },
+
+  initItemView: function() {
+    this.item = new Item();
+    this.childViews.ItemView = new ItemView({
+        model: this.item
+    });
   },
 });
 

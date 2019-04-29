@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel='stylesheet' href='dist/style.css'>
 </head>
-<body>
+<body class='js-wrapper'>
 	<section class="js-search-items">
 		<h2>Поиск товаров по артикулам</h2>
 		<div class="js-search">
@@ -32,7 +32,10 @@
 					<% items.forEach(function(item) { %>
 						<div class="item">
 							<p><b>Артикул: <%= item.sid %></b></p>
-							<p><i><%= item.name %></i> <a href="http://sima-land.ru<%= item.itemUrl %>" target="_blank">Подробнее</a></p>
+							<p>
+								<i><%= item.name %></i> 
+								<span class="link js-more-link">Подробнее</span>
+							</p>
 						</div>
 					<% }); %>
 				</div>
@@ -40,21 +43,24 @@
 			</div>
 		</script>
 	</section>
-	<section class="js-item" style="display: none;">
-		<h1>Название</h1>
-		<div class="flex-row item-block">
-			<img src="" alt="" class="item-image"/>
-			<div class="item-description">
-				<div class="price-block">125<sup>00</sup> RUB</div>
-				<ul class="tabs">
-					<li class="active"><span>Описание</span></li>
-					<li><span class="link">Характеристики</span></li>
-				</ul>
-				<div class="tab-content">
-					<p>Описание</p>
+	<section class="js-item not_display">
+		<div class="js-item-wrapper"></div>
+		<script type="template" id="item-template">
+			<h1>Название</h1>
+			<div class="flex-row item-block">
+				<img src="" alt="" class="item-image"/>
+				<div class="item-description">
+					<div class="price-block">125<sup>00</sup> RUB</div>
+					<ul class="tabs">
+						<li class="active"><span>Описание</span></li>
+						<li><span class="link">Характеристики</span></li>
+					</ul>
+					<div class="tab-content">
+						<p>Описание</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</script>
 	</section>
 	<script type="text/javascript" src="dist/js/app.js"></script>
 </body>

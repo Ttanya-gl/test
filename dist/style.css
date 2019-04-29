@@ -68,6 +68,16 @@ section {
       .tabs li .link:hover {
         border-color: transparent; }
 
+.link {
+  border-bottom: 1px dashed;
+  color: blue;
+  cursor: pointer; }
+  .link:hover {
+    border-color: transparent; }
+
+.not_display {
+  display: none; }
+
 textarea {
   background: #fff;
   border: 1px solid #ccc;

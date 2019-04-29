@@ -82,3 +82,16 @@ section {
     }
   }
 }
+
+.link {
+  border-bottom: 1px dashed;
+  color: blue;
+  cursor: pointer;
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+.not_display {
+  display: none;
+}
